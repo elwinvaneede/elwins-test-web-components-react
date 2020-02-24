@@ -1,16 +1,26 @@
-# stencil-ds-react-template
+# Elwins Test Web Components for React
 
-This is an example repo of building plugins.
+These are my test Web Components specifically build for React.
 
-## Step 1.
 
-- Update the `package.json` to have the correct package name for this repo.
-- Replace `component-library` under `dependencies` with your core stencil package name.
+## Using these components
 
-## Step 2.
+Add this package to your project.
 
-- Build your core stencil package.
+Import the component(s) you want to use:
 
-## Step 3.
+```js
+import { MyComponent } from 'elwins-test-web-components-react';
+```
 
+Use it in your JSX:
+
+```html
+<MyComponent first="Jeff"></MyComponent>
+```
+
+
+## How to release a new version
+
+- Build the core Stencil package (`elwins-test-web-comoonents`).
 - Run build on this package.

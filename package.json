@@ -1,8 +1,9 @@
 {
   "name": "elwins-test-web-components-react",
   "sideEffects": false,
-  "version": "0.0.3",
-  "description": "React specific wrapper for my test component-library",
+  "version": "0.0.4",
+  "description": "React specific wrapper for my test Web Components library",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/elwinvaneede/elwins-test-web-components-react.git"
@@ -30,10 +31,10 @@
     "np": "^3.1.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "typescript": "^3.3.4000"
+    "typescript": "^3.8.2"
   },
   "dependencies": {
-    "elwins-test-web-components": "^0.0.3"
+    "elwins-test-web-components": "^0.0.4"
   },
   "peerDependencies": {
     "react": "^16.7.0",
