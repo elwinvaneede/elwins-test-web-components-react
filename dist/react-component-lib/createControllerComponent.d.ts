@@ -18,10 +18,10 @@ export declare function createControllerComponent<OptionsType extends object, Lo
         render(): null;
         context: any;
         setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<OptionsType & ReactControllerProps<OverlayEventDetail>>) => {} | Pick<{}, K>) | Pick<{}, K>, callback?: () => void): void;
-        forceUpdate(callBack?: () => void): void;
-        readonly props: Readonly<{
+        forceUpdate(callback?: () => void): void;
+        readonly props: Readonly<OptionsType & ReactControllerProps<OverlayEventDetail>> & Readonly<{
             children?: React.ReactNode;
-        }> & Readonly<OptionsType & ReactControllerProps<OverlayEventDetail>>;
+        }>;
         state: Readonly<{}>;
         refs: {
             [key: string]: React.ReactInstance;

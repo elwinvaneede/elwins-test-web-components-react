@@ -20,10 +20,10 @@ export declare function createOverlayComponent<T extends object, LoadingElementT
         render(): React.ReactPortal;
         context: any;
         setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<T & ReactOverlayProps<OverlayEventDetail>>) => {} | Pick<{}, K>) | Pick<{}, K>, callback?: () => void): void;
-        forceUpdate(callBack?: () => void): void;
-        readonly props: Readonly<{
+        forceUpdate(callback?: () => void): void;
+        readonly props: Readonly<T & ReactOverlayProps<OverlayEventDetail>> & Readonly<{
             children?: React.ReactNode;
-        }> & Readonly<T & ReactOverlayProps<OverlayEventDetail>>;
+        }>;
         state: Readonly<{}>;
         refs: {
             [key: string]: React.ReactInstance;

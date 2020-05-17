@@ -1,7 +1,7 @@
 {
   "name": "elwins-test-web-components-react",
   "sideEffects": false,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React specific wrapper for my test Web Components library",
   "license": "MIT",
   "repository": {
@@ -15,8 +15,7 @@
     "tsc": "tsc -p .",
     "rollup": "rollup -c"
   },
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.es.js",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/"
