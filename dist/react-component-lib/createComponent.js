@@ -10,33 +10,39 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import React from 'react';
-import ReactDom from 'react-dom';
 import { attachEventProps, createForwardRef, dashToPascalCase, isCoveredByReact, } from './utils/index';
 export const createReactComponent = (tagName) => {
     const displayName = dashToPascalCase(tagName);
     const ReactComponent = class extends React.Component {
         constructor(props) {
             super(props);
+            this.ref = React.createRef();
         }
         componentDidMount() {
             this.componentDidUpdate(this.props);
         }
         componentDidUpdate(prevProps) {
-            const node = ReactDom.findDOMNode(this);
+            const node = this.ref.current;
             attachEventProps(node, this.props, prevProps);
         }
         render() {
             const _a = this.props, { children, forwardedRef, style, className, ref } = _a, cProps = __rest(_a, ["children", "forwardedRef", "style", "className", "ref"]);
             const propsToPass = Object.keys(cProps).reduce((acc, name) => {
-                if (name.indexOf('on') === 0 && name[2] === name[2].toUpperCase()) {
+                const isEventProp = name.indexOf('on') === 0 && name[2] === name[2].toUpperCase();
+                const isDataProp = name.indexOf('data-') === 0;
+                const isAriaProp = name.indexOf('aria-') === 0;
+                if (isEventProp) {
                     const eventName = name.substring(2).toLowerCase();
-                    if (isCoveredByReact(eventName)) {
+                    if (typeof document !== "undefined" && isCoveredByReact(eventName)) {
                         acc[name] = cProps[name];
                     }
                 }
+                else if (isDataProp || isAriaProp) {
+                    acc[name] = cProps[name];
+                }
                 return acc;
             }, {});
-            const newProps = Object.assign(Object.assign({}, propsToPass), { ref: forwardedRef, style,
+            const newProps = Object.assign(Object.assign({}, propsToPass), { ref: this.ref, style,
                 className });
             return React.createElement(tagName, newProps, children);
         }
