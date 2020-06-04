@@ -22,7 +22,7 @@
   ],
   "devDependencies": {
     "@types/jest": "^23.3.14",
-    "@types/node": "^13.13.5",
+    "@types/node": "^13.13.9",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "jest": "^26.0.1",
@@ -30,10 +30,10 @@
     "np": "^6.2.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.5"
   },
   "dependencies": {
-    "elwins-test-web-components": "^0.0.5"
+    "elwins-test-web-components": "^0.1.0"
   },
   "peerDependencies": {
     "react": "^16.7.0",
